@@ -24,7 +24,7 @@ Esta es la capa correspondiente a la api de la aseguradora ficticia.
 
 ## Configuración
 
-Edita el archivo `config.php` para ajustar los parámetros de conexión a la base de datos. Busca la sección de configuración de la base de datos y modifica según corresponda:
+Edita el archivo `config.php` para ajustar los parámetros de conexión a la base de datos:
 
 ```php
 <?php
