@@ -5,7 +5,7 @@ Esta es la capa correspondiente a la api de la aseguradora ficticia.
 ## Características
 
 * **PHP 8.2**: Desarrollada con la versión 8.2 de PHP.
-* **Base de datos MySQL**: Conexión a MySQL para almacenamiento y consulta de datos.
+* **Base de datos MySQL**: Conexión a **MySQL** para almacenamiento y consulta de datos.
 * **URLs amigables**: Diseñada para funcionar bajo un servidor **Apache**, aprovechando la reescritura de URLs.
 
 ## Requisitos previos
