@@ -19,8 +19,4 @@ $router->addRoute('/cotizar', 'QuoteController', 'cotizar');
 
 $requestUri = $_SERVER['REQUEST_URI'];
 
-try {
-    $router->dispatch($requestUri);
-} catch (Throwable $e) {
-    echo $e->getMessage();
-}
+$router->dispatch($requestUri);

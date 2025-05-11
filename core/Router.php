@@ -8,22 +8,26 @@ class Router {
         $this->routes[] = compact('path', 'controller', 'action');
     }
 
-    public function dispatch($requestUri) {        
-        // $requestUri = str_replace('/test','',$requestUri);
-        foreach ($this->routes as $route) {
-            if ($route['path'] === $requestUri) {
-                $controllerName = $route['controller'];
-                $action = $route['action'];
+    public function dispatch($requestUri) {
+        try {     
+            // $requestUri = str_replace('/test','',$requestUri);
+            foreach ($this->routes as $route) {
+                if ($route['path'] === $requestUri) {
+                    $controllerName = $route['controller'];
+                    $action = $route['action'];
 
-                if (class_exists($controllerName)) {
-                    $controller = new $controllerName();
-                    if (method_exists($controller, $action)) {
-                        return $controller->$action();
+                    if (class_exists($controllerName)) {
+                        $controller = new $controllerName();
+                        if (method_exists($controller, $action)) {
+                            return $controller->$action();
+                        }
                     }
+                    throw new Exception("Controlador o método no encontrado.");
                 }
-                throw new Exception("Controlador o método no encontrado.");
             }
+            throw new Exception("Ruta no encontrada.");
+        } catch (Throwable $e) {
+            echo $e->getMessage();
         }
-        throw new Exception("Ruta no encontrada.");
     }
 }
