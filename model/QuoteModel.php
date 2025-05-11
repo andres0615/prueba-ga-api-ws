@@ -36,21 +36,6 @@ class QuoteModel extends BaseModel {
         $stmt->execute();
         $planes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        // $planes = [
-        //     [
-        //         'nombre' => 'Plan Basico',
-        //         'valor' => 1000000
-        //     ],
-        //     [
-        //         'nombre' => 'Plan Platino',
-        //         'valor' => 2000000
-        //     ],
-        //     [
-        //         'nombre' => 'Plan Premium',
-        //         'valor' => 3000000
-        //     ]
-        // ];
-
         return $planes;
     }
 
