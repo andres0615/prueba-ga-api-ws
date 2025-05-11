@@ -6,6 +6,7 @@ require_once 'core/BaseController.php';
 require_once 'core/BaseModel.php';
 require_once 'controller/QuoteController.php';
 require_once 'model/QuoteModel.php';
+require_once 'model/PlanModel.php';
 
 // Configuración de CORS
 header('Access-Control-Allow-Origin: *');

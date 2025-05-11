@@ -3,7 +3,8 @@
 class QuoteModel extends BaseModel {
     public function cotizar($requestData)
     {
-        $planes = $this->getPlans();
+        $planModel = new PlanModel();
+        $planes = $planModel->getPlans();
 
         $placa = $requestData['placa'];
         // $placa = 'ABC1234'; // Simulación de placa
@@ -26,17 +27,6 @@ class QuoteModel extends BaseModel {
         ];
 
         return $response;
-    }
-
-    public function getPlans()
-    {
-        $pdo = $this->getPDO();
-        $query = "SELECT * FROM planes";
-        $stmt = $pdo->prepare($query);
-        $stmt->execute();
-        $planes = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        return $planes;
     }
 
     public function getQuoteNumber()
