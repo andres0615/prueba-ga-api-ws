@@ -1,4 +1,4 @@
-# API WS
+# API Aseguradora ficticia
 
 Esta es la capa correspondiente a la api de la aseguradora ficticia.
 
