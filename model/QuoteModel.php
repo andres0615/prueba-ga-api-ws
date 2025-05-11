@@ -5,8 +5,8 @@ class QuoteModel extends BaseModel {
     {
         $planes = $this->getPlans();
 
-        // $placa = $requestData['placa'];
-        $placa = 'ABC1234'; // Simulación de placa
+        $placa = $requestData['placa'];
+        // $placa = 'ABC1234'; // Simulación de placa
 
         $cotizaciones = [];
 

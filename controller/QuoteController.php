@@ -8,11 +8,22 @@ class QuoteController extends BaseController {
 
     public function cotizar()
     {
-        $quoteModel = new QuoteModel();
-        $requestData = $this->getRequestData();
+        try {
 
-        $response = $quoteModel->cotizar($requestData);
+            $quoteModel = new QuoteModel();
+            $requestData = $this->getRequestData();
 
-        $this->jsonResponse($response);
+            $response = $quoteModel->cotizar($requestData);
+
+            $this->jsonResponse($response);
+
+        } catch (Throwable $e) {
+            // echo $e->getMessage();
+            $response = [
+                'error' => 'Error al procesar la solicitud',
+                'message' => $e->getMessage()
+            ];
+            $this->jsonResponse($response);
+        }
     }
 }
