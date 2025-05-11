@@ -30,26 +30,26 @@ class QuoteModel extends BaseModel {
 
     public function getPlans()
     {
-        // $pdo = $this->getPDO();
-        // $query = "SELECT * FROM planes";
-        // $stmt = $pdo->prepare($query);
-        // $stmt->execute();
-        // $planes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $pdo = $this->getPDO();
+        $query = "SELECT * FROM planes";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $planes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        $planes = [
-            [
-                'nombre' => 'Plan Básico',
-                'valor' => 1000000
-            ],
-            [
-                'nombre' => 'Plan Avanzado',
-                'valor' => 2000000
-            ],
-            [
-                'nombre' => 'Plan Premium',
-                'valor' => 3000000
-            ]
-        ];
+        // $planes = [
+        //     [
+        //         'nombre' => 'Plan Basico',
+        //         'valor' => 1000000
+        //     ],
+        //     [
+        //         'nombre' => 'Plan Platino',
+        //         'valor' => 2000000
+        //     ],
+        //     [
+        //         'nombre' => 'Plan Premium',
+        //         'valor' => 3000000
+        //     ]
+        // ];
 
         return $planes;
     }

@@ -1,4 +1,4 @@
-# API SGA
+# API WS
 
 Desarrollado con php 8.2
 
