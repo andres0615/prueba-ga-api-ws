@@ -21,6 +21,26 @@ Esta es la capa correspondiente a la api de la aseguradora ficticia.
 3. Verifica que **MySQL** está en ejecución y puedes acceder con credenciales válidas.
 4. Descarga el archivo de respaldo `sql/backup-api-ws.sql`.
 5. Importa el backup en tu base de datos **MySQL**.
+6. Para la correcta integracion con la **API SGA** se requiere configurar un **Virtual Host** para esta api. En el archivo `.conf` de tu servidor **Apache** agregar la configuracion del Virtual Host, ejemplo:
+    ```txt
+    <VirtualHost *:8083> 
+        DocumentRoot "C:/laragon/www/prueba-ga-api-ws"
+        ServerName prueba-ga-api-ws.test
+        ServerAlias *.prueba-ga-api-ws.test
+        <Directory "C:/laragon/www/prueba-ga-api-ws">
+            AllowOverride All
+            Require all granted
+        </Directory>
+    </VirtualHost>
+    ```
+
+    Luego agregar el dominio al archivo `C:\Windows\System32\drivers\etc\hosts` de tu sitema operativo, ejemplo:
+
+    ```txt
+    127.0.0.1      prueba-ga-api-ws.test #laragon magic!   
+    ```
+
+    Reinicar **Apache** luego de aplicar las configuraciones.
 
 ## Configuración
 
